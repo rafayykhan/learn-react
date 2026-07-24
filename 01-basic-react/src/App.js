@@ -6,6 +6,8 @@
 //         built-in html tag like <div>. lowercase = html, Uppercase = yours
 //   2. it must return JSX (or null)
 
+import Me from "./me";
+
 function App() {
   // this function returns html
   // ...well, it LOOKS like html but it isn't. this is JSX.
@@ -15,9 +17,10 @@ function App() {
   return (
     // a component can only return ONE parent element.
     // if you need two siblings, wrap them in a <div> or in <> </> (fragment)
-    <h1>
-      Hello its me Rafay learning react
-    </h1>
+    // <h1>
+    //   Hello its me Rafay learning react
+    // </h1>
+    <Me />
   );
 }
 
