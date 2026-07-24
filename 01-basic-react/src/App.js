@@ -6,7 +6,7 @@
 //         built-in html tag like <div>. lowercase = html, Uppercase = yours
 //   2. it must return JSX (or null)
 
-import Me from "./me";
+import Me from "./me";  
 
 function App() {
   // this function returns html
