@@ -58,7 +58,14 @@ function App() {
   // This function runs when the "Remove Value" button is clicked.
   // Same idea, but it subtracts 1 instead.
   const removeValue = () => {
-    setCounter(counter - 1)
+    if (counter <= 0 )
+    {
+      console.log("error")
+    }
+    else{
+      setCounter(counter - 1)
+
+    }
   }
 
   // -------------------------------------------------------------
