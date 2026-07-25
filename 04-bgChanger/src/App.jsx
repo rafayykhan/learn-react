@@ -1,122 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // useState lets us store the current background color in React state.
+  // We use a hook here (instead of a plain variable) because we need the UI
+  // to re-render whenever the color changes — plain variables don't trigger
+  // re-renders. `color` holds the value; `setColor` updates it and re-renders.
+  const [color, setColor] = useState("olive");
+  console.log(color);
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      {/* The background color is driven by the `color` state,
+          so it re-paints automatically whenever state changes. */}
+      <div
+        className="w-full h-screen duration-200"
+        style={{ backgroundColor: color }}
+      >
+        <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+          <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+            {/* Each button calls setColor with its color, which updates
+                state and re-renders App so the background reflects the choice. */}
+            <button
+              onClick={() => setColor("red")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "red" }}
+            >
+              {" "}
+              red
+            </button>
+            <button
+              onClick={() => setColor("blue")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "blue" }}
+            >
+              {" "}
+              blue
+            </button>
+            <button
+              onClick={() => setColor("yellow")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "yellow" }}
+            >
+              {" "}
+              yellow
+            </button>
+            <button
+              onClick={() => setColor("cyan")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "cyan" }}
+            >
+              {" "}
+              cyan
+            </button>
+            <button
+              onClick={() => setColor("green")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "green" }}
+            >
+              {" "}
+              green
+            </button>
+            <button
+              onClick={() => setColor("skyblue")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "skyblue" }}
+            >
+              {" "}
+              sky blue
+            </button>
+            <button
+              onClick={() => setColor("brown")}
+              className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
+              style={{ background: "brown" }}
+            >
+              {" "}
+              brown
+            </button>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
