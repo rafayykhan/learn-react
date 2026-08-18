@@ -1,11 +1,12 @@
+import Hello from './components/Hello.jsx'
 function App() {
 
   return (
     <>
       <div>
-        hello world!
+        <Hello />
       </div>
-    </>
+    </> 
   )
 }
 
