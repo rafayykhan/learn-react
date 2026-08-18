@@ -4,7 +4,22 @@ function App() {
   return (
     <>
       <div>
-        <Hello />
+        <Hello 
+          name="Rafay"
+          paragraph = "this is a component that is being imported from another file and rendered inside the App component"
+        />
+        <Hello 
+          name="Nick"
+          paragraph = "this is a component"
+        />
+        <Hello 
+          name="Lucy"
+          paragraph = "this is a component that is being imported from another file and rendered inside the App component"
+        />
+        <Hello 
+          name="mick"
+          paragraph = "this is a component"
+        />
       </div>
     </> 
   )

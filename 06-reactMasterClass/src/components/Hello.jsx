@@ -1,9 +1,13 @@
-function Hello() {
+function Hello(props) { // this is a functional component that takes in props as an argument and returns a JSX element
+    // this makes the component reusable and allows us to pass in different values for the name and paragraph props when
+    //  we render the component in the App component
     return (
         <div>
-            Hello World!
+            <h1 className="heading">
+                {props.name}
+            </h1>
             <p>
-                this is a component that is being imported from another file and rendered inside the App component
+                {props.paragraph}
             </p>
         </div>
     )
