@@ -1,12 +1,13 @@
 // import Hello from './components/Hello.jsx'
-import Destructuring from './components/Destructuring.jsx'
+// import Destructuring from './components/Destructuring.jsx'
+import Fruits from './components/Fruits.jsx'
 function App() {
   // const seatNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const personobj = {
-    name: "Rafay",
-    paragraph: "this is a component that is being imported from another file and rendered inside the App component",
-    seatNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  }
+  // const personobj = {
+  //   name: "Rafay",
+  //   paragraph: "this is a component that is being imported from another file and rendered inside the App component",
+  //   seatNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  // }
   return (
     <>
       <div>
@@ -29,12 +30,14 @@ function App() {
         />
         */}
 
-        <Destructuring
+        {/* <Destructuring
           // name="destructuring"
           // paragraph = "this is a component that is being imported from another file and rendered inside the App component"
           // seatNumbers = {seatNumbers}
           obj = {personobj}
-        />
+        /> */}
+
+        <Fruits/>
       </div>
     </> 
   )
