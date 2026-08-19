@@ -4,9 +4,10 @@ export default function Form() {
 
     const [inputFormName, setInputFormName] = useState({firstName: "", lastName: ""});
 
-    function handleChange(e) {
-        setInputFormName(e.target.value)
-    }
+    // function handleChange(e) {
+    //     setInputFormName(firstName.target.value)
+
+    // }
 
     return (
         <>
@@ -14,9 +15,9 @@ export default function Form() {
                 THIS IS THE FORM!
             </h1>
             <div>
-                <form> <input onChange={(e) => handleChange(e)} type="text" value = {inputFormName.firstName} />first name</form>
+                <form> <input onChange={(e) => setInputFormName({firstName: e.target.value})} type="text" value = {inputFormName.firstName} />first name</form>
                 <br />
-                <form> <input onChange={(e) => handleChange(e)} type="text" value = {inputFormName.lastName} />last name</form>
+                <form> <input onChange={(e) => setInputFormName({lastName: e.target.value})} type="text" value = {inputFormName.lastName} />last name</form>
             </div>
         </>
     )
