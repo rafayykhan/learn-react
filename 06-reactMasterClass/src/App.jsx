@@ -1,7 +1,8 @@
 // import Hello from './components/Hello.jsx'
 // import Destructuring from './components/Destructuring.jsx'
 // import Fruits from './components/Fruits.jsx'
-import Message from "./components/Message.jsx"
+import Counter from "./components/Counter.jsx"
+// import Message from "./components/Message.jsx"
 // import ConditionalComponent from './components/ConditionalComponent.jsx'
 function App() {
   // const seatNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -40,7 +41,8 @@ function App() {
         /> */}
 
         {/* <Fruits/> */}
-        <Message />
+        {/* <Message /> */}
+        <Counter/>
         {/* <ConditionalComponent/> */}
       </div>
     </> 
