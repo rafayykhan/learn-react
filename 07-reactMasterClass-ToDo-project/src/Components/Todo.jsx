@@ -2,10 +2,9 @@ import { useState } from "react";
 import TodoItems from "./TodoItems";
 
 export default function Todo() {
-//   const [toDo, setToDo] = useState("");
-  const [toDo, setToDo] = useState({name:"", done: false});
-
-
+  //   const [toDo, setToDo] = useState("");
+  const [toDo, setToDo] = useState({ name: "", done: false });
+    
   // we want to store the list somewhere so we can display it on the screen and we can also add new items
   // to the list and we can also remove items from the list. so we will use useState hook to create a state
   //  variable called toDoList and a function called setToDoList to update the value of toDoList. The initial
@@ -27,13 +26,20 @@ export default function Todo() {
     console.log("added the: ", item);
   }
 
+  //   const [delList, setDelList] = useState("")
 
-//   const [delList, setDelList] = useState("")
-
-  function deleteList (item) {
+  function deleteList(item) {
     // setDelList("");
-    setToDoList( toDoList.filter((todo)=> todo!= item)) // return a filtered array
-    console.log("deleted the: ", item)
+    setToDoList(toDoList.filter((todo) => todo != item)); // return a filtered array
+    console.log("deleted the: ", item);
+  }
+
+  function handleClickTask(item) {
+    const newArray = toDoList.map((todo) =>
+      todo.name === item ? { ...todo, done: !todo.done } : todo,
+    );
+    setToDoList(newArray);
+    console.log("the task has been clicked", item);
   }
 
   return (
@@ -46,7 +52,7 @@ export default function Todo() {
     >
       <form style={{ display: "flex", gap: "8px" }}>
         <input
-          onChange={(e) => setToDo({name: e.target.value , done: false })}
+          onChange={(e) => setToDo({ name: e.target.value, done: false })}
           value={toDo.name}
           type="text"
           style={{
@@ -73,42 +79,49 @@ export default function Todo() {
           submit
         </button>
       </form>
-
-      <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
-        {toDoList.map((item, index) => {
-          // every item gets its own row, so the button sits in front of that item
-          return (
-            <li
-              key={index}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                marginBottom: "8px",
-              }}
-            >
-              <div style={{ flex: 1 }}>
-                <TodoItems item={item.name} index={index} /> {/* pass the string, TodoItems cant render an object */}
-              </div>
-              <button
+      <span>
+        <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
+          {toDoList.map((item, index) => {
+            // every item gets its own row, so the button sits in front of that item
+            return (
+              <li
+                key={index}
                 style={{
-                  padding: "10px 14px",
-                  fontSize: "15px",
-                  color: "white",
-                  backgroundColor: "#4f46e5",
-                  border: "none",
-                  borderRadius: "6px",
-                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  marginBottom: "8px",
                 }}
-
-                onClick = {() => deleteList(item)}
               >
-                X
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+                <div
+                  style={{
+                    flex: 1,
+                    textDecoration: item.done ? "line-through" : "none",
+                  }}
+                  onClick={() => handleClickTask(item.name)}
+                >
+                  <TodoItems item={item.name} index={index} done={item.done} />{" "}
+                  {/* pass the string, TodoItems cant render an object */}
+                </div>
+                <button
+                  style={{
+                    padding: "10px 14px",
+                    fontSize: "15px",
+                    color: "white",
+                    backgroundColor: "#4f46e5",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => deleteList(item)}
+                >
+                  X
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </span>
     </div>
   );
 }

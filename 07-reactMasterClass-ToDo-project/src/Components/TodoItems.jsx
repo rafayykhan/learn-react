@@ -14,6 +14,8 @@ export default function TodoItems(props) {
                 backgroundColor: "#f3f4f6",
                 borderLeft: "4px solid #4f46e5",
                 borderRadius: "6px",
+                // when done is true the item gets the line through it
+                // textDecoration: props.done ? "line-through" : "none",
             }}
         >
             {" "}
