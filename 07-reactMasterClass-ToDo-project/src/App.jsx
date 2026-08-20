@@ -1,3 +1,4 @@
+import Header from './Components/Header'
 import Todo from './Components/Todo'
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <Todo />
     </>
   )
