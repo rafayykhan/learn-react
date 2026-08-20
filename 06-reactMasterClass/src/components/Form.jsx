@@ -22,6 +22,7 @@ export default function Form() {
       <div>
         <form>
           {" "}
+          {/* here onChange is used to handle the change event on the input field */}
           <input
             onChange={(e) =>
               setInputFormName({ ...inputFormName, firstName: e.target.value })

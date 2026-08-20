@@ -11,6 +11,9 @@ export default function Counter() {
             <h1>Count Value is: {count} </h1> 
             {/* here why we use call back function because we want to pass a function to the onClick event handler 
             and it helps in managing the state */}
+
+            {/* here we used onClick what onClick is doing that 
+            it is used to handle the click event on the button */}
             <button onClick = {() => changeCount(count + incrementBy)}> Click here to increase the count</button>
             <button onClick = {() => changeCount(count - decrementBy)}> Click here to decrease the count</button>
             <br />
