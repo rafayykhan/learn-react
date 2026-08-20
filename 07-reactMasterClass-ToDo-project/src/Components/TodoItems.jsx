@@ -9,7 +9,8 @@ export default function TodoItems(props) {
                 fontSize: "16px",
                 fontWeight: "normal",
                 padding: "12px 14px",
-                marginBottom: "8px",
+                margin: 0, // the row (li) in Todo.jsx handles the spacing now,
+                // so the h2 keeps no margin of its own and stays lined up with the button
                 backgroundColor: "#f3f4f6",
                 borderLeft: "4px solid #4f46e5",
                 borderRadius: "6px",

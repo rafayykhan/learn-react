@@ -24,8 +24,21 @@ export default function Todo() {
     setToDo("");
   }
 
+
+  const [delList, setDelList] = useState("")
+  function deleteList (d) {
+    setDelList("");
+    console.log("clicked")
+  }
+
   return (
-    <div style={{ maxWidth: "420px", margin: "60px auto", fontFamily: "sans-serif" }}>
+    <div
+      style={{
+        maxWidth: "420px",
+        margin: "60px auto",
+        fontFamily: "sans-serif",
+      }}
+    >
       <form style={{ display: "flex", gap: "8px" }}>
         <input
           onChange={(e) => setToDo(e.target.value)}
@@ -58,10 +71,37 @@ export default function Todo() {
 
       <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
         {toDoList.map((item, index) => {
-          return <TodoItems
-             item={item}
-             index={index}
-           />
+          // every item gets its own row, so the button sits in front of that item
+          return (
+            <li
+              key={index}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                marginBottom: "8px",
+              }}
+            >
+              <div style={{ flex: 1 }}>
+                <TodoItems item={item} index={index} />
+              </div>
+              <button
+                style={{
+                  padding: "10px 14px",
+                  fontSize: "15px",
+                  color: "white",
+                  backgroundColor: "#4f46e5",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                }}
+
+                onClick = {(d) => deleteList(d)}
+              >
+                X
+              </button>
+            </li>
+          );
         })}
       </ul>
     </div>
