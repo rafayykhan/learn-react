@@ -2,7 +2,9 @@ import { useState } from "react";
 import TodoItems from "./TodoItems";
 
 export default function Todo() {
+//   const [toDo, setToDo] = useState("");
   const [toDo, setToDo] = useState("");
+
 
   // we want to store the list somewhere so we can display it on the screen and we can also add new items
   // to the list and we can also remove items from the list. so we will use useState hook to create a state
@@ -25,10 +27,12 @@ export default function Todo() {
   }
 
 
-  const [delList, setDelList] = useState("")
-  function deleteList (d) {
-    setDelList("");
-    console.log("clicked")
+//   const [delList, setDelList] = useState("")
+
+  function deleteList (item) {
+    // setDelList("");
+    setToDoList( toDoList.filter((todo)=> todo!= item)) // return a filtered array
+    console.log("deleted the: ", item)
   }
 
   return (
@@ -96,7 +100,7 @@ export default function Todo() {
                   cursor: "pointer",
                 }}
 
-                onClick = {(d) => deleteList(d)}
+                onClick = {() => deleteList(item)}
               >
                 X
               </button>
