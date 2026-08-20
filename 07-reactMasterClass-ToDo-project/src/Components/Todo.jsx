@@ -4,7 +4,6 @@ import TodoItems from "./TodoItems";
 export default function Todo() {
   //   const [toDo, setToDo] = useState("");
   const [toDo, setToDo] = useState({ name: "", done: false });
-    
   // we want to store the list somewhere so we can display it on the screen and we can also add new items
   // to the list and we can also remove items from the list. so we will use useState hook to create a state
   //  variable called toDoList and a function called setToDoList to update the value of toDoList. The initial
@@ -14,6 +13,9 @@ export default function Todo() {
   //  variable called toDo and a function called setToDo to update the value of toDo. The initial value
   //  of toDo is set to an empty string. and we are also creating a state variable called toDoList and a
   // function called setToDoList to update the value of toDoList. The initial value of toDoList is set to an empty array.
+
+  const completedTasks = toDoList.filter((todo) => todo.done).length;
+  const totalTodos = toDoList.map((todo)=> todo.name).length
 
   function handleClick(e, item) {
     e.preventDefault(); // this will prevent the page from reloading when we submit the form and it will allow us to handle the form submission in our own way.
@@ -122,6 +124,23 @@ export default function Todo() {
           })}
         </ul>
       </span>
+      {/* the footer row: flex pushes one counter to each end with space-between */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "12px",
+          marginTop: "28px",
+          paddingTop: "18px",
+          borderTop: "2px solid #e5e7eb", // a line to separate the footer from the list
+          fontSize: "20px",
+          fontWeight: "600",
+        }}
+      >
+        <div style={{ color: "#16a34a" }}>Completed Tasks: {completedTasks}</div>
+        <div style={{ color: "#4f46e5" }}>Total Tasks: {totalTodos}</div>
+      </div>
     </div>
   );
 }
