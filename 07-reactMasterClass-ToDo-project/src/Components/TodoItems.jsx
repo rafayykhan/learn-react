@@ -2,7 +2,10 @@ export default function TodoItems(props) {
     return (
         <h2
             key={props.index}
-            style={{
+            style={{ // this is basically objects we are passing here 
+                // so thats why the stylling name is little different from the css file and we are using camel case instead of kebab case
+                // in simple words we are writhing jsx here for writ8ing the css
+                
                 fontSize: "16px",
                 fontWeight: "normal",
                 padding: "12px 14px",
