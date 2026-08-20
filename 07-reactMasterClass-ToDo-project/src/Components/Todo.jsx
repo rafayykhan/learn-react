@@ -25,19 +25,38 @@ export default function Todo() {
   }
 
   return (
-    <div>
-      <form>
+    <div style={{ maxWidth: "420px", margin: "60px auto", fontFamily: "sans-serif" }}>
+      <form style={{ display: "flex", gap: "8px" }}>
         <input
           onChange={(e) => setToDo(e.target.value)}
           value={toDo}
           type="text"
+          style={{
+            flex: 1,
+            padding: "10px",
+            fontSize: "15px",
+            border: "1px solid #ccc",
+            borderRadius: "6px",
+          }}
         />
-        <button onClick={(e) => handleClick(e)} type="submit">
+        <button
+          onClick={(e) => handleClick(e)}
+          type="submit"
+          style={{
+            padding: "10px 18px",
+            fontSize: "15px",
+            color: "white",
+            backgroundColor: "#4f46e5",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
           submit
         </button>
       </form>
 
-      <ul>
+      <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
         {toDoList.map((item, index) => {
           return <TodoItems
              item={item}
