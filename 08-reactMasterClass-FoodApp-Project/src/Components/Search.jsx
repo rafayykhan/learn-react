@@ -27,13 +27,43 @@ export default function Search({ setDataList }) {
 
   // react---> comunicates ---> real data
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        justifyContent: "center",
+        marginBottom: "40px",
+      }}
+    >
       <input
         onChange={(e) => setData(e.target.value)}
         type="text"
         value={data}
+        style={{
+          width: "320px",
+          padding: "12px 18px",
+          fontSize: "16px",
+          color: "#333",
+          border: "1px solid #ddd",
+          borderRadius: "999px",
+          outline: "none",
+        }}
       />
-      <button onClick={(e) => handleClick(e)}>submit</button>
+      <button
+        onClick={(e) => handleClick(e)}
+        style={{
+          padding: "12px 26px",
+          fontSize: "15px",
+          fontWeight: "bold",
+          color: "#fff",
+          background: "#ff7043",
+          border: "none",
+          borderRadius: "999px",
+          cursor: "pointer",
+        }}
+      >
+        submit
+      </button>
     </div>
   );
 }
