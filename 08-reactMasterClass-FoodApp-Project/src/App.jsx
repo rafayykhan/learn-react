@@ -7,7 +7,15 @@ function App() {
 
   return (
     <>
-      <div>
+      <div
+        style={{
+          minHeight: "100vh",
+          boxSizing: "border-box",
+          padding: "50px 24px",
+          background: "#fdf6f0",
+          fontFamily: "'Segoe UI', system-ui, sans-serif",
+        }}
+      >
         <Search setDataList={setDataList} />
         <FoodList dataList = {dataList}/>
       </div>
