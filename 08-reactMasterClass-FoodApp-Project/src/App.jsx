@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Search from "./Components/Search";
 import FoodList from "./Components/FoodList";
-
+import Container from "./Components/Container";
 function App() {
   const [dataList, setDataList] = useState([]); // to save the api data
 
@@ -17,7 +17,10 @@ function App() {
         }}
       >
         <Search setDataList={setDataList} />
-        <FoodList dataList = {dataList}/>
+
+        <Container>
+          <FoodList dataList={dataList} />
+        </Container>
       </div>
     </>
   );
