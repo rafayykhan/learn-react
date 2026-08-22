@@ -4,18 +4,20 @@ import { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
 
-  const [state, dispatch] = useReducer(reducer, 0)  
+  const [state, dispatch] = useReducer(reducer, {count: 0 })  
   function reducer(state, action)
   {
     // the jib of the reducer function is to cahnge the value of the reducer funnction 
     if (action.type == "increment"){
-      // 
-      return state + action.payload;
+      // making the shallow copy of existing object 
+      // so that if there is any other value of the count they get copied here
+
+      return {...state, count: state.count + action.payload}//state + action.payload;
     }
     
     if (action.type == "decrement"){
       // 
-      return state - action.payload;
+      return {...state, count: state.count - action.payload};
     }
     
   } 
@@ -37,7 +39,7 @@ function App() {
         </button>
         <div>
           <h1>
-             Reducer: {state}
+             Reducer: {state.count }
           </h1>
         </div>
         {/* dispatch whenever i click on the increment this action is going to be dipatched and the action is being 
