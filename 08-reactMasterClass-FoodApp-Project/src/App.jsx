@@ -2,6 +2,8 @@ import { useState } from "react";
 import Search from "./Components/Search";
 import FoodList from "./Components/FoodList";
 import Container from "./Components/Container";
+import InnerContainer from "./Components/InnerContainer";
+
 function App() {
   const [dataList, setDataList] = useState([]); // to save the api data
 
@@ -19,7 +21,9 @@ function App() {
         <Search setDataList={setDataList} />
 
         <Container>
-          <FoodList dataList={dataList} />
+          <InnerContainer>
+            <FoodList dataList={dataList} />
+          </InnerContainer>
         </Container>
       </div>
     </>
