@@ -7,7 +7,7 @@ import FoodDetails from "./Components/FoodDetails";
 
 function App() {
   const [dataList, setDataList] = useState([]); // to save the api data
-
+  const [foodId, setFoodId] = useState("716300")
   return (
     <>
       <div
@@ -23,10 +23,10 @@ function App() {
 
         <Container>
           <InnerContainer>
-            <FoodList dataList={dataList} />
+            <FoodList setFoodId= {setFoodId} dataList={dataList} />
           </InnerContainer>
           <InnerContainer>
-            <FoodDetails/>
+            <FoodDetails foodId = {foodId} />
           </InnerContainer>
         </Container>
       </div>
