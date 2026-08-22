@@ -3,6 +3,7 @@ import Search from "./Components/Search";
 import FoodList from "./Components/FoodList";
 import Container from "./Components/Container";
 import InnerContainer from "./Components/InnerContainer";
+import FoodDetails from "./Components/FoodDetails";
 
 function App() {
   const [dataList, setDataList] = useState([]); // to save the api data
@@ -23,6 +24,9 @@ function App() {
         <Container>
           <InnerContainer>
             <FoodList dataList={dataList} />
+          </InnerContainer>
+          <InnerContainer>
+            <FoodDetails/>
           </InnerContainer>
         </Container>
       </div>
