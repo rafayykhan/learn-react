@@ -11,7 +11,7 @@ function App() {
     if (action.type == "increment"){
       // making the shallow copy of existing object 
       // so that if there is any other value of the count they get copied here
-
+ 
       return {...state, count: state.count + action.payload}//state + action.payload;
     }
     
